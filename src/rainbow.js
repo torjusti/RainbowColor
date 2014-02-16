@@ -13,7 +13,7 @@
     } else {
       throw new Error('No color handler ' + type);
     }
-  }
+  };
 
   // Returns the color in a specific representation.
   Rainbow.prototype.get = function(type) {
@@ -73,7 +73,7 @@
         if (h < 2 / 3) return m1 + (m2 - m1) * (2 / 3 - h) * 6;
         return m1;
       }
-      h = hsl[0] / 360, s = hsl[1] / 100, l = hsl[2] / 100;
+      var h = hsl[0] / 360, s = hsl[1] / 100, l = hsl[2] / 100;
       m2 = l <= 0.5 ? l * (s + 1) : l + s - l * s;
       m1 = l * 2 - m2;
       return [
@@ -89,8 +89,8 @@
     // For some reason the algorithm disappeared from Wikipedia when the two pages
     // were merged so it is only available from the edit history.
     fromRgb: function(rgb) {
-      r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255;
-      var max = Math.max(r, g, b), min = Math.min(r, g, b), h, s, l;
+      var r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255;
+      var max = Math.max(r, g, b), min = Math.min(r, g, b);
       var h, s, l = Math.round(1 / 2 * (max + min) * 100);
       if (max === min) return [0, 0, l];
       if (max === r && g >= b) h = 60 * (g - b) / (max - min);
