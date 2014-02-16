@@ -1,6 +1,4 @@
-// Rainbow - a library for manipulating colors
-// Copyright 2014 http://github.com/bilde
-// Released under the MIT license
+// @license MIT - http://github.com/bilde/rainbow
 
 (function(global) {
 
@@ -120,6 +118,6 @@
   };
 
   // Export Rainbow to either Node or the browser based on what is available.
-  global.Rainbow = Rainbow;
+  global.RainbowColor = Rainbow;
 
 })(typeof exports === 'undefined' ? window : exports);

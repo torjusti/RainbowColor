@@ -1,4 +1,4 @@
-function hslToRgb(h, s, l) {
+function hslToRgb(hue, sat, lig) {
   function hueToRgb(m1, m2, h) {
     if (h < 0) h += 1;
     if (h > 1) h -= 1;
@@ -7,7 +7,7 @@ function hslToRgb(h, s, l) {
     if (h < 2 / 3) return m1 + (m2 - m1) * (2 / 3 - h) * 6;
     return m1;
   }
-  h = h / 360, s = s / 100, l = l / 100;
+  var h = hue / 360, s = sat / 100, l = lig / 100;
   m2 = l <= 0.5 ? l * (s + 1) : l + s - l * s;
   m1 = l * 2 - m2;
   return [
@@ -17,9 +17,9 @@ function hslToRgb(h, s, l) {
   ];
 }
 
-function rgbToHsl(r, g, b) {
-  r = r / 255, g = g / 255, b = b / 255;
-  var max = Math.max(r, g, b), min = Math.min(r, g, b), h, s, l;
+function rgbToHsl(red, green, blue) {
+  var r = red / 255, g = green / 255, b = blue / 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
   var h, s, l = Math.round(1 / 2 * (max + min) * 100);
   if (max === min) return [0, 0, l];
   if (max === r && g >= b) h = 60 * (g - b) / (max - min);
@@ -33,11 +33,11 @@ function rgbToHsl(r, g, b) {
 
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? [
+  return [
     parseInt(result[1], 16),
     parseInt(result[2], 16),
     parseInt(result[3], 16)
-  ] : throw new Error('Unable to parse hex color.');
+  ];
 }
 
 function rgbToHex(r, g, b) {
@@ -57,5 +57,5 @@ function darken(r, g, b, factor) {
 }
 
 function lighten(r, g, b, factor) {
-  return blend([255, 255, 255], [r, g, b], factor || 0.5)
+  return blend([255, 255, 255], [r, g, b], factor || 0.5);
 }
