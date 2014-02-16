@@ -1,5 +1,5 @@
 {
-  "name": "rainbow",
+  "name": "RainbowColor",
   "main": "lib/rainbow.min.js",
   "version": "1.0.0",
   "description": "textarea selection library for the browser",
