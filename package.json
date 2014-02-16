@@ -1,0 +1,33 @@
+{
+  "name": "rainbow",
+  "main": "lib/rainbow.min.js",
+  "version": "1.0.0",
+  "description": "textarea selection library for the browser",
+  "keywords": [
+    "color",
+    "manipulation",
+    "blend",
+    "darken",
+    "lighten",
+    "translation"
+  ],
+  "bugs": "http://github.com/bilde/rainbow/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bilde/rainbow.git"
+  },
+  "devDependencies": {
+    "gulp-uglify": "~0.2.0",
+    "gulp": "~3.5.0",
+    "gulp-rename": "~0.2.2",
+    "gulp-jshint": "~1.4.2"
+  },
+  "homepage": "https://github.com/bilde/rainbow",
+  "authors": [
+    "bilde <torjusti@gmail.com>"
+  ],
+  "ignore": [
+    "node_modules"
+  ]
+}
