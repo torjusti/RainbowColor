@@ -1,6 +1,6 @@
 // @license MIT - http://github.com/bilde/rainbow
 
-(function(global) {
+(function() {
 
   // Constructor object. Color is an color that is supported by the core
   // or any optional plugins - see documentation.
@@ -117,7 +117,6 @@
     }
   };
 
-  // Export Rainbow to either Node or the browser based on what is available.
-  global.RainbowColor = Rainbow;
+  window.RainbowColor = Rainbow;
 
-})(typeof exports === 'undefined' ? window : exports);
+})();
