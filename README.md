@@ -1,7 +1,7 @@
 RainbowColor
 ============
 
-`RainbowColor` helps you manipulate and convert colors using a simple and chainable library. To install it you can simply run `bower install RainbowColor` or fetch it here from `lib/rainbow.min.js` and copy it to your own codebase. A file that contains standalone functions is available at `src/standalone_functions.js` that could be useful if you want to implement color algorithms in your own program.
+`RainbowColor` helps you manipulate and convert colors using a simple and chainable library. To install it you can simply run `bower install RainbowColor` or fetch it here from `lib/rainbow.min.js` and copy it to your own codebase. A file that contains standalone functions is available at `src/standalone_functions.js` that could be useful if you want to implement color algorithms in your own program. It is also possible to use `RainbowColor` with node - just run `npm install RainbowColor` and you are ready to go.
 
 Usage
 -----
