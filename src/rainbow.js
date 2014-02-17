@@ -117,6 +117,10 @@
     }
   };
 
-  window.RainbowColor = Rainbow;
+  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = Rainbow;
+  } else {
+    window.RainbowColor = Rainbow;
+  }
 
 })();
