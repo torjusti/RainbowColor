@@ -31,7 +31,7 @@ new RainbowColor('#000000', 'hex').lighten(0.5).get('hex') // #808080
 Extending RainbowColor
 ----------------------
 
-You can add your own color modules to selix pretty easily by adding an object to `RainbowColor.colors` which stores all handlers. All handlers must contain one method named `fromRgb` that takes an rgb color and translates to your color module, and one method named `toRgb` which takes your color and translates it to rgb.
+You can add your own color modules to `RainbowColor` pretty easily by adding an object to `RainbowColor.colors` which stores all handlers. All handlers must contain one method named `fromRgb` that takes an rgb color and translates to your color module, and one method named `toRgb` which takes your color and translates it to rgb.
 
 ```javascript
 // Handles hex colors of the form #FFFFFF.
