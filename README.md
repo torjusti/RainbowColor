@@ -50,3 +50,8 @@ Rainbow.colors.hex = {
   }
 };
 ```
+
+Tests
+-----
+
+I have recently added a couple tests, and found a ton of bugs while doing so, but they are still lacking. I will continue work on intensive testing. Tests are done using `QUnit` and can be viewed in the `tests` directory.
