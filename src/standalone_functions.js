@@ -18,17 +18,38 @@ function hslToRgb(hue, sat, lig) {
 }
 
 function rgbToHsl(red, green, blue) {
-  var r = red / 255, g = green / 255, b = blue / 255;
-  var max = Math.max(r, g, b), min = Math.min(r, g, b);
-  var h, s, l = Math.round(1 / 2 * (max + min) * 100);
-  if (max === min) return [0, 0, l];
-  if (max === r && g >= b) h = 60 * (g - b) / (max - min);
-  else if (max === r && g < b) h = 60 * (g - b) / (max - min) + 360;
-  else if (max === g) h = 60 * (b - r) / (max - min) + 120;
-  else if (max === b) h = 60 * (r - g) / (max - min) + 240;
-  if (l <= 1 / 2) s = (max - min) / 2 * l;
-  else if (l > 1 / 2) s = (max - min) / (2 - 2 * l);
-  return [Math.round(h * 360), Math.round(s * 100), l];
+  var r = red / 255;
+  var g = green / 255;
+  var b = blue / 255;
+
+  var max = Math.max(r, g, b);
+  var min = Math.min(r, g, b);
+
+  var h;
+  var s;
+  var l = 1 / 2 * (max + min);
+
+  if (max === min) {
+    return [0, 0, Math.round(l * 100)];
+  }
+
+  if (max === r && g >= b) {
+    h = 60 * ((g - b) / (max - min));
+  } else if (max === r && g < b) {
+    h = 60 * ((g - b) / (max - min)) + 360;
+  } else if (max === g) {
+    h = 60 * ((b - r) / (max - min)) + 120;
+  } else if (max === b) {
+    h = 60 * ((r - g) / (max - min)) + 240;
+  }
+
+  if (l <= 1 / 2) {
+    s = (max - min) / (2 * l);
+  } else if (l > 1 / 2) {
+    s = (max - min) / (2 - 2 * l);
+  }
+
+  return [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
 }
 
 function hexToRgb(hex) {
