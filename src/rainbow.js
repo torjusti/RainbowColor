@@ -129,7 +129,19 @@
     },
 
     toRgb: function(hex) {
+      // If the color does not start with a hash we add it.
+      if (/^[a-fA-F0-9]+$/.test(hex)) {
+        hex = '#' + hex;
+      }
+
+      // If this is a short hex of three letters (#FFF) we try to expand it.
+      var extender = /^#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])$/;
+      if (extender.test(hex)) {
+        hex = hex.replace(extender, '#$1$1$2$2$3$3');
+      }
+
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
       return [
         parseInt(result[1], 16),
         parseInt(result[2], 16),

@@ -54,3 +54,11 @@ test('Able to create object with HSL and translate it to hex', function() {
     }
   }
 });
+
+test('Supports validating HEX colors properly', function() {
+  ok(RainbowColor.colors.hex.toRgb('#FFF').join() === '255,255,255');
+  ok(RainbowColor.colors.hex.toRgb('#FFFFFF').join() === '255,255,255');
+  ok(RainbowColor.colors.hex.toRgb('#000').join() === '0,0,0');
+  ok(RainbowColor.colors.hex.toRgb('#fff').join() === '255,255,255');
+  ok(RainbowColor.colors.hex.toRgb('#ffffff').join() === '255,255,255');
+});
